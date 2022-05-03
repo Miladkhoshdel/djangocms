@@ -7,3 +7,10 @@ class BaseModel(models.Model):
     create_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_add=True)
 
+    class Meta:
+        abstract = True
+
+
+class Status(models.IntegerChoices):
+    DRAFT = 0, _('Draft')
+    PUBLISH = 1, _('Publish')
