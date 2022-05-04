@@ -1,9 +1,11 @@
+from pyexpat import model
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.models import User
 
 
 class BaseModel(models.Model):
-    owner = models.CharField(_("Owner"), max_length=200)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="r_owner", verbose_name=_('Owner'))
     create_date = models.DateTimeField(_('Created Date'), auto_now_add=True)
     update_date = models.DateTimeField(_('Updated Date'), auto_now=True)
 

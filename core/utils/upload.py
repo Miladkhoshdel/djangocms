@@ -4,7 +4,7 @@ from datetime import date
 
 
 def upload_path(instance, name):
-    hashed_name = uuid.uuid4()
+    hashed_name = str(uuid.uuid4())
     name, ext = os.path.splitext(name)
     final = hashed_name + ext
     path_sign = "/"

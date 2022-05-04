@@ -3,7 +3,6 @@ from core.models.base import BaseModel, Status
 from core.utils.upload import upload_path
 from django.utils.translation import gettext_lazy as _
 
-
 class Page(BaseModel):
     title = models.CharField(_('Title'), max_length=255)
     sub_title = models.CharField(_('Sub Title'), max_length=255)
